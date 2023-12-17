@@ -1,0 +1,11 @@
+<h2>Ajouter un nouveau stagiaire </h2>
+<div>
+  <form (ngSubmit)="ajouterStg()">
+
+    <label> Nom : </label> <input [(ngModel)]="stg.nom" name="nom"> <br><br>
+    <label> Prenom : </label> <input [(ngModel)]="stg.prenom" name="prenom"><br><br>
+    <label> Date de naissance : </label> <input [(ngModel)]="stg.dateNaissance " name="dateNaissance" type="date"> <br><br>
+    <label> Email :</label> <input [(ngModel)]="stg.adressMail" name="email"><br><br>
+    <button type="submit" >  Ajouter </button>
+  </form>
+</div>
