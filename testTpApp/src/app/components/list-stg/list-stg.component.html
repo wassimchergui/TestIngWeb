@@ -1,0 +1,42 @@
+<div *ngIf="stgList.length>0; else listeVide">
+
+
+  <h1>La liste des stagiaires</h1>
+  <table cellpadding="5" cellspacing="5">
+    <thead>
+    <tr>
+      <th> Id</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date de naissance</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let stg of stgList;">
+      <td> {{stg.id }}</td>
+      <td> {{stg.nom | uppercase}}</td>
+      <td> {{stg.prenom }}</td>
+      <td>{{stg.dateNaissance | date : "dd/MM/yyyy" }}</td>
+      <td> {{stg.adressMail }}</td>
+      <td><button (click)="modifierStg(stg.id)"  style="margin-right: 10px"> Modifier </button>
+        <button (click)="supprimerStg(stg.id)"  style="margin-right: 10px"> Supprimer </button></td>
+
+    </tr>
+    </tbody>
+
+  </table>
+<br>
+  <br>
+    <button  routerLink="/add" style="margin-right: 10px"> Ajouter stagiaire </button>
+    <button (click)="deleteAllStg()" style="margin-right: 10px"> Supprimer tout</button>
+
+
+  </div>
+
+<ng-template #listeVide>
+  <p>La liste des employÃ©s est vide</p>
+</ng-template>
+
